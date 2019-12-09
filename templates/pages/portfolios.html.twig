@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+     <div style="height: 92px;" class ="entete" >
+        <div class="titre">
+            <p>Portfolio <em>groupe</em> </p>
+        </div>
+        <div class="tri" id= "myBtnContainer">
+            <ul>
+                <li>
+                    <button class="btn active" onclick="filterSelection('all')" >Tout</button>
+                </li>
+                <li>
+                    <button class="btn" onclick="filterSelection('tableaux')" >Tableaux</button>
+                </li>
+                <li>
+                    <button class="btn tri_tableaux" onclick="filterSelection('croquis')" >Croquis</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='container'>
+        <ul>
+            {% for item in portfolios %}
+                <li class="filterDiv {{ item.type }}">
+                    <a href="#"><img class="landscape" src="{{ item.img }}" alt=""></a>
+                    <div class='info' id="info1">
+                        <h3>{{ item.titre }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

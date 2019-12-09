@@ -1,0 +1,58 @@
+{% block stylesheets %}
+<link href="{{ asset('css/authentification.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+	<div class="container h-100">
+	<div class="d-flex justify-content-center">
+		<div style="margin-top: 25%;" class="card col-md-4 animated bounceInDown myForm">
+			<div class="card-header">
+				<h4>Authentifiez-vous :</h4>
+			</div>
+			<div class="card-body">
+				<form>
+					<div id="dynamic_container">
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text br-15"><i class="fas fa-at"></i></span>
+							</div>
+                            <input class="form-control" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+						</div>
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text br-15"><i class="fas fa-key"></i></span>
+							</div>
+                            <input class="form-control" type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<button type="submit" class="btn btn-success btn-sm float-right submit_btn"><i class="fas fa-arrow-alt-circle-right"></i> Valider !</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
+{% block javascripts %}
+    <script src="{{ asset('js/authentification.js') }}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
+{% endblock %}

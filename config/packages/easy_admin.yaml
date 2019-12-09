@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        - App\Entity\Portfolio
+        - App\Entity\Contact
+    site_name: '<img src="../img/logo.png" />'
+    user:
+        display_name: true
+        display_avatar: true
+        name_property_path: 'Lassana'
+        avatar_property_path: '<img src="../img/logo.png" />'
+
+    #Par défaut, lorsque vous accédez à la page d'index du backend, vous êtes redirigé vers la listvue de la première entité configurée. Pour changer cela, ajoutez-le default: trueà n’importe quel autre élément de la configuration de votre menu personnalisé
+    design:
+        menu:
+            - { label: 'Rechercher', icon: 'search', url: 'https://google.com', css_class: 'menu--product text-bold text-center', target: '_blank' }
+            - { label: 'Accueil', url: '/', icon: 'home', css_class: 'menu--product text-center', target: '_blank' }
+            #- { label: 'Les portfolios de votre site' }
+            - { entity: 'Portfolio', icon: 'images', css_class: 'menu--product text-center'}
+            #- { label: 'Les contacts via le formulaire' }
+            - { entity: 'Contact', icon: 'id-card', css_class: 'menu--product text-center',}
+            

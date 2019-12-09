@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+     <div class ="entete" >
+        <div class="titre">
+            <p>Portfolio <em>groupe</em> </p>
+        </div>
+        <div class="tri" id= "myBtnContainer">
+            <ul>
+                <li>
+                    <button class="btn active" onclick="filterSelection('all')" >Tout</button>
+                </li>
+                <li>
+                    <button class="btn" onclick="filterSelection('tableaux')" >Tableaux</button>
+                </li>
+                <li>
+                    <button class="btn tri_tableaux" onclick="filterSelection('croquis')" >Croquis</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='container'>
+        <ul>
+            <li class="filterDiv tableaux">
+               <a href="#"><img class="landscape" src="img/portfolio/img1.png" alt=""></a>
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv tableaux">
+            <img class="landscape" src="img/portfolio/img2.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv tableaux">
+            <img class="landscape" src="img/portfolio/img3.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv tableaux">
+            <img class="landscape" src="img/portfolio/img4.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv tableaux">
+            <img class="landscape" src="img/portfolio/img5.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv tableaux">
+            <img class="landscape" src="img/portfolio/img6.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv croquis">
+            <img class="landscape" src="img/portfolio/img7.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv croquis">
+            <img class="landscape" src="img/portfolio/img8.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv croquis">
+            <img class="landscape" src="img/portfolio/img9.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+            <li class="filterDiv croquis">
+            <img class="landscape" src="img/portfolio/img10.png" alt="">
+                <div class='info' id="info1">
+                    <h3>Joli pont dans une forêt</h3>
+                    <p>Cette image a été téléchargé sur le web à partir d'une bibliothèque libre de droit.</p>
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+
+{% endblock %}
+
